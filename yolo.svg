@@ -1,0 +1,61 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="spaceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a0a2e;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#2d1b4e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f0518;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="rocketGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff6b35;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#ff8c42;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffd166;stop-opacity:1" />
+    </linearGradient>
+    <filter id="fireGlow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="200" height="200" rx="20" fill="url(#spaceGrad)"/>
+  
+  <!-- Stars -->
+  <circle cx="20" cy="30" r="1" fill="#fff"/>
+  <circle cx="50" cy="20" r="1.5" fill="#fff"/>
+  <circle cx="180" cy="40" r="1" fill="#fff"/>
+  <circle cx="160" cy="25" r="1.5" fill="#fff"/>
+  <circle cx="30" cy="170" r="1" fill="#fff"/>
+  <circle cx="170" cy="160" r="1" fill="#fff"/>
+  <circle cx="100" cy="15" r="2" fill="#ffd166"/>
+  <circle cx="15" cy="100" r="1" fill="#fff"/>
+  <circle cx="185" cy="90" r="1" fill="#fff"/>
+  
+  <!-- Hexagonal border -->
+  <polygon points="100,10 175,50 175,150 100,190 25,150 25,50" fill="none" stroke="#ff6b35" stroke-width="3" opacity="0.5"/>
+  
+  <!-- Rocket -->
+  <g filter="url(#fireGlow)" transform="translate(100, 100) rotate(-45)">
+    <!-- Rocket body -->
+    <path d="M0,-50 Q15,-30 15,20 L15,40 L-15,40 L-15,20 Q-15,-30 0,-50" fill="url(#rocketGrad)"/>
+    <!-- Nose cone -->
+    <path d="M0,-50 Q-10,-35 0,-30 Q10,-35 0,-50" fill="#ffd166"/>
+    <!-- Window -->
+    <circle cx="0" cy="-10" r="8" fill="#0a1628" stroke="#58a6ff" stroke-width="2"/>
+    <!-- Fins -->
+    <path d="M-15,30 L-30,50 L-15,40 Z" fill="#ff6b35"/>
+    <path d="M15,30 L30,50 L15,40 Z" fill="#ff6b35"/>
+    <!-- Flame -->
+    <path d="M-10,40 Q0,70 0,80 Q0,70 10,40" fill="#ff4444">
+      <animate attributeName="d" dur="0.3s" repeatCount="indefinite"
+        values="M-10,40 Q0,70 0,80 Q0,70 10,40;
+                M-8,40 Q0,65 0,75 Q0,65 8,40;
+                M-10,40 Q0,70 0,80 Q0,70 10,40"/>
+    </path>
+  </g>
+  
+  <!-- Text -->
+  <text x="100" y="185" text-anchor="middle" fill="#ffd166" font-family="Arial, sans-serif" font-size="18" font-weight="bold">YOLO</text>
+</svg>

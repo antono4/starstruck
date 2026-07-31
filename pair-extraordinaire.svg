@@ -1,0 +1,71 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="pairGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a2744;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0d1628;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="person1Grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#60a5fa;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="person2Grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#a78bfa;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+    <filter id="pairGlow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="200" height="200" rx="20" fill="url(#pairGrad)"/>
+  
+  <!-- Connection lines -->
+  <line x1="70" y1="100" x2="130" y2="100" stroke="#fbbf24" stroke-width="2" stroke-dasharray="5,3" opacity="0.6">
+    <animate attributeName="stroke-dashoffset" dur="1s" values="0;8" repeatCount="indefinite"/>
+  </line>
+  
+  <!-- Code brackets -->
+  <text x="100" y="105" text-anchor="middle" fill="#fbbf24" font-size="20" font-weight="bold" font-family="monospace">&lt;/&gt;</text>
+  
+  <!-- Hexagonal border -->
+  <polygon points="100,10 175,50 175,150 100,190 25,150 25,50" fill="none" stroke="#8b5cf6" stroke-width="3" opacity="0.5"/>
+  
+  <!-- Person 1 -->
+  <g filter="url(#pairGlow)" transform="translate(60, 80)">
+    <!-- Head -->
+    <circle cx="0" cy="0" r="20" fill="url(#person1Grad)"/>
+    <!-- Body -->
+    <ellipse cx="0" cy="45" rx="25" ry="20" fill="url(#person1Grad)"/>
+    <!-- Face -->
+    <circle cx="-7" cy="-3" r="3" fill="#0d1628"/>
+    <circle cx="7" cy="-3" r="3" fill="#0d1628"/>
+    <path d="M-5,8 Q0,12 5,8" fill="none" stroke="#0d1628" stroke-width="2"/>
+  </g>
+  
+  <!-- Person 2 -->
+  <g filter="url(#pairGlow)" transform="translate(140, 80)">
+    <!-- Head -->
+    <circle cx="0" cy="0" r="20" fill="url(#person2Grad)"/>
+    <!-- Body -->
+    <ellipse cx="0" cy="45" rx="25" ry="20" fill="url(#person2Grad)"/>
+    <!-- Face -->
+    <circle cx="-7" cy="-3" r="3" fill="#0d1628"/>
+    <circle cx="7" cy="-3" r="3" fill="#0d1628"/>
+    <path d="M-5,8 Q0,12 5,8" fill="none" stroke="#0d1628" stroke-width="2"/>
+  </g>
+  
+  <!-- Plus sign (collaboration) -->
+  <g transform="translate(100, 130)">
+    <circle cx="0" cy="0" r="15" fill="#238636"/>
+    <line x1="-6" y1="0" x2="6" y2="0" stroke="#fff" stroke-width="3"/>
+    <line x1="0" y1="-6" x2="0" y2="6" stroke="#fff" stroke-width="3"/>
+  </g>
+  
+  <!-- Text -->
+  <text x="100" y="185" text-anchor="middle" fill="#a78bfa" font-family="Arial, sans-serif" font-size="10" font-weight="bold">PAIR EXTRAORDINAIRE</text>
+</svg>

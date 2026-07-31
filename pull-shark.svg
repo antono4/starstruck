@@ -1,0 +1,56 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="oceanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a1628;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a3a5c;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="sharkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4a90a4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2d5a6b;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="200" height="200" rx="20" fill="url(#oceanGrad)"/>
+  
+  <!-- Hexagonal border -->
+  <polygon points="100,10 175,50 175,150 100,190 25,150 25,50" fill="none" stroke="#58a6ff" stroke-width="3" opacity="0.5"/>
+  
+  <!-- Shark silhouette -->
+  <g filter="url(#glow)" transform="translate(30, 50) scale(1.2)">
+    <!-- Shark body -->
+    <path d="M10,40 Q30,20 60,30 L90,25 L95,40 L90,55 Q60,60 30,50 Z" fill="url(#sharkGrad)"/>
+    <!-- Dorsal fin -->
+    <path d="M45,30 L55,5 L60,30" fill="#3d7a8c"/>
+    <!-- Tail -->
+    <path d="M5,40 L0,25 L15,40 L0,55 Z" fill="#3d7a8c"/>
+    <!-- Eye -->
+    <circle cx="75" cy="38" r="4" fill="#fff"/>
+    <circle cx="76" cy="38" r="2" fill="#000"/>
+    <!-- Gill lines -->
+    <line x1="50" y1="35" x2="50" y2="48" stroke="#2d5a6b" stroke-width="1.5"/>
+    <line x1="55" y1="33" x2="55" y2="47" stroke="#2d5a6b" stroke-width="1.5"/>
+    <line x1="60" y1="32" x2="60" y2="46" stroke="#2d5a6b" stroke-width="1.5"/>
+  </g>
+  
+  <!-- Water bubbles -->
+  <circle cx="150" cy="60" r="5" fill="#58a6ff" opacity="0.5"/>
+  <circle cx="160" cy="80" r="3" fill="#58a6ff" opacity="0.4"/>
+  <circle cx="145" cy="75" r="4" fill="#58a6ff" opacity="0.3"/>
+  
+  <!-- PR icon -->
+  <g transform="translate(140, 140)">
+    <rect x="0" y="0" width="40" height="30" rx="5" fill="#238636"/>
+    <text x="20" y="20" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">PR</text>
+  </g>
+  
+  <!-- Text -->
+  <text x="100" y="180" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-size="14" font-weight="bold">PULL SHARK</text>
+</svg>
