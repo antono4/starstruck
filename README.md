@@ -1,1 +1,26 @@
-Last updated: 2026-10-30 22:51:50 WIB
+# starstruck
+
+
+
+## 📋 Overview
+
+This repository contains **17 files** and is built with the following technologies:
+
+HTML
+
+## 🚀 Quick Start
+
+## ✨ Features
+
+- 📝 Auto-generated documentation
+
+## 🛠️ Technologies
+
+HTML
+
+## 📄 License
+
+MIT License
+
+---
+*Last updated: 2026-10-31 01:51:56 WIB*
